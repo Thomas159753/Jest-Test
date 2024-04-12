@@ -1,0 +1,23 @@
+{
+  "name": "jest-test",
+  "version": "1.0.0",
+  "description": "Jest practice",
+  "main": "sum.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomas159753/Jest-Test.git"
+  },
+  "author": "Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomas159753/Jest-Test/issues"
+  },
+  "homepage": "https://github.com/Thomas159753/Jest-Test#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
