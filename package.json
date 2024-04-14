@@ -2,7 +2,7 @@
   "name": "jest-test",
   "version": "1.0.0",
   "description": "Jest practice",
-  "main": "sum.js",
+  "main": "Testing-Practice.js",
   "scripts": {
     "test": "jest",
     "watch": "jest --watchAll"
