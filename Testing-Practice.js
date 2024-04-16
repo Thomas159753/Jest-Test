@@ -9,25 +9,47 @@ function reverseString (string){
 const calculator = {
   add(a,b){
     const result = a + b;
-    return Math.ceil(result * 100) / 100;
+    return Math.round(result * 100) / 100
   },
 
   subtract(a,b){
-    return a - (b);
-    // return Math.ceil(result * 100) / 100;
+    if(b < 0){
+      result = a - (-b);
+      return Math.round(result * 100) / 100;
+    }else{
+      result = a - b;
+      return Math.round(result * 100) / 100;
+    }
+  },
+
+  divide(a,b){
+    const result = a / b;
+    return Math.round(result * 100) / 100;
+  },
+
+  multiply(a,b){
+    const result = a * b;
+    return Math.round(result * 100) / 100;
   }
-
-  // divide(){
-
-  // }
-
-  // multiply(){
-
-  // }
 }
 
-module.exports = {
-  capitalize: capitalize,
-  reverseString: reverseString,
-  calculator: calculator
-};
+function caesarCipher(string,factor){
+  let alphabet = "abcdefghijklmnopqrstuvwxyz"
+  let newArray = ""
+  for(let character of string){
+    if(alphabet.includes(character)){
+      let index = alphabet.indexOf(character) + factor
+      if(index > alphabet.length) index = index % alphabet.length
+      newArray += `${alphabet[index]}`;
+    }else if(character === " "){
+      newArray += " "
+    }
+  }
+  return newArray
+} 
+caesarCipher("ab z",3);
+// module.exports = {
+//   capitalize: capitalize,
+//   reverseString: reverseString,
+//   calculator: calculator
+// };
