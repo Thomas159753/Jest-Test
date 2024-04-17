@@ -2,7 +2,8 @@ const {
   capitalize,
   reverseString,
   calculator,
-  caesarCipher
+  caesarCipher,
+  analyzeArray
 } = require('./Testing-Practice');
 
 describe(('Calculator tests'), () => {
@@ -78,8 +79,17 @@ describe(('Reverse String Test'), () => {
 })
 
 
-describe(('RAnalyze Array'), () => {
+describe(('Analyze Array'), () => {
   test('Average is correctly calculated"', () =>{
-    expect(reverseString([1,8,3,4,2,6]).length).toBe(6);
+    expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4);
+  });
+  test('Length is correctly calculated"', () =>{
+    expect(analyzeArray([1,8,3,4,2,6]).length).toBe(6);
+  });
+  test('Min is correctly calculated"', () =>{
+    expect(analyzeArray([1,8,3,4,2,6]).min).toBe(1);
+  });
+  test('Max is correctly calculated"', () =>{
+    expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8);
   });
 })

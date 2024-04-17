@@ -37,11 +37,15 @@ function caesarCipher(string,factor){
   let alphabet = "abcdefghijklmnopqrstuvwxyz"
   let newArray = ""
   let lowerString = string.toLowerCase();
+
   for(let character of lowerString){
+
     if(alphabet.includes(character)){
       let index = alphabet.indexOf(character) + factor
+
       if(index > alphabet.length) index = index % alphabet.length
       newArray += `${alphabet[index]}`;
+
     }else if(character === " "){
       newArray += " "
     }
@@ -50,21 +54,23 @@ function caesarCipher(string,factor){
 } 
 
 function analyzeArray (array){
-  const output = {}
 
   if (!Array.isArray(array) ||!array.every(element => typeof element === 'number')) return null
 
-  output.length = array.length
-  output.min = 
-
-  return output
+  return {
+    length: array.length,
+    min: Math.min(...array),
+    max:  Math.max(...array),
+    average: array.reduce((a,b) => a + b) / array.length
+  }
 }
 
-console.log(analyzeArray([1,8,3,4,2,6]));
+console.log(analyzeArray([1,8,3,4,2,6]).average);
 
-// module.exports = {
-//   capitalize: capitalize,
-//   reverseString: reverseString,
-//   calculator: calculator,
-//   caesarCipher:caesarCipher
-// };
+module.exports = {
+  capitalize: capitalize,
+  reverseString: reverseString,
+  calculator: calculator,
+  caesarCipher:caesarCipher,
+  analyzeArray: analyzeArray
+};
