@@ -36,7 +36,8 @@ const calculator = {
 function caesarCipher(string,factor){
   let alphabet = "abcdefghijklmnopqrstuvwxyz"
   let newArray = ""
-  for(let character of string){
+  let lowerString = string.toLowerCase();
+  for(let character of lowerString){
     if(alphabet.includes(character)){
       let index = alphabet.indexOf(character) + factor
       if(index > alphabet.length) index = index % alphabet.length
@@ -47,9 +48,23 @@ function caesarCipher(string,factor){
   }
   return newArray
 } 
-caesarCipher("ab z",3);
+
+function analyzeArray (array){
+  const output = {}
+
+  if (!Array.isArray(array) ||!array.every(element => typeof element === 'number')) return null
+
+  output.length = array.length
+  output.min = 
+
+  return output
+}
+
+console.log(analyzeArray([1,8,3,4,2,6]));
+
 // module.exports = {
 //   capitalize: capitalize,
 //   reverseString: reverseString,
-//   calculator: calculator
+//   calculator: calculator,
+//   caesarCipher:caesarCipher
 // };
